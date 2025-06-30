@@ -5,6 +5,8 @@ import AuthPage from './pages/AuthPage'
 import Dashboard from './pages/Dashboard'
 import Community from './pages/Community'
 import CommunityCustomize from './pages/CommunityCustomize'
+import Analytics from './pages/Analytics'
+import Integrations from './pages/Integrations'
 
 function App() {
   const { user, loading, initialize } = useAuthStore()
@@ -39,6 +41,14 @@ function App() {
         <Route 
           path="/community/customize" 
           element={user ? <CommunityCustomize /> : <Navigate to="/auth" />} 
+        />
+        <Route 
+          path="/analytics" 
+          element={user ? <Analytics /> : <Navigate to="/auth" />} 
+        />
+        <Route 
+          path="/integrations" 
+          element={user ? <Integrations /> : <Navigate to="/auth" />} 
         />
         <Route 
           path="/" 
